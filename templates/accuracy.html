@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main_page</title>
+    <link rel="stylesheet" href="\static\css.css" />
+  </head>
+  <body>
+    <div class="head">
+      <h1>
+          House Price Prediction in USA
+      </h1>
+    </div>
+    <div class="navi">
+      <a href="{{ url_for('start') }}"><button class="f1">home page</button></a>
+      <a href="{{ url_for('prediction') }}"><button class="f2">Prediction</button></a>
+
+    </div>
+  <div class="input-container">
+     <h6>{{r2_score}}</h6>
+    </div>
+
+  </body>
+</html>

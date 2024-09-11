@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>main_page</title>
+    <link rel="stylesheet" href="\static\css.css" />
+  </head>
+  <body>
+    <div class="head">
+      <h1>
+          House Price Prediction in USA
+      </h1>
+    </div>
+    <div class="navi">
+        <a href="{{ url_for('prediction') }}"><button class="f1">prediction values</button></a>
+        <a href="{{ url_for('accuracy') }}"><button class="f2">accuracy</button></a>
+
+    </div>
+
+    <div class="input-container">
+       <form method="post" action="/file">
+           <label>bedrooms:     </label>
+           <select name="bedroom">
+           {%for i in range(0, bed)%}
+                <option value="{{bedrooms[i]}}">{{bedrooms[i]}}</option>
+           {%endfor%}
+            </select>
+
+
+
+           <label>bathrooms:    </label>
+           <select name="bathrooms">
+           {%for i in range(0, bat)%}
+                <option value="{{bathrooms[i]}}">{{bathrooms[i]}}</option>
+           {%endfor%}
+            </select>
+
+
+            <label>floors:   </label>
+           <select name="floors">
+           {%for i in range(0, flr)%}
+                <option value="{{floors[i]}}">{{floors[i]}}</option>
+           {%endfor%}
+            </select>
+           <br><br>
+
+
+           <label>WaterFort:   </label>
+           <select name="waterfort">
+           {%for i in range(0, water)%}
+                <option value="{{waterfort[i]}}">{{waterfort[i]}}</option>
+           {%endfor%}
+            </select>
+
+
+           <label>View:    </label>
+           <select name="view">
+           {%for i in range(0, view_len)%}
+                <option value="{{view[i]}}">{{view[i]}}</option>
+           {%endfor%}
+            </select>
+
+
+            <label>Conditions:    </label>
+           <select name="conditions">
+           {%for i in range(0, con)%}
+                <option value="{{conditions[i]}}">{{conditions[i]}}</option>
+           {%endfor%}
+            </select><br><br>
+
+
+
+
+
+           <label>square_fit_living: </label><input type="text" name="square_fit_live" placeholder="enter square_fits_living" required><br><br>
+           <label>square_fit_lot: </label><input type="text" name="square_fit_lot" placeholder="enter square_fits_lot" required><br><br>
+
+
+             <label>square_fit_above: </label><input type="text" name="square_fit_above" placeholder="enter square_fits_above" required><br><br>
+           <label>square_fit_basement: </label><input type="text" name="square_fit_basement" placeholder="enter square_fits_basement" required><br><br>
+            <label>year_built: </label><input type="text" name="year_built" placeholder="enter year of built" required><br><br>
+           <label>year_renovated: </label><input type="text" name="year_renovated" placeholder="enter year of renovated" required><br><br>
+
+
+           <label>City:  </label>
+           <select name="city">
+           {%for i in range(0, city_len)%}
+                <option value="{{city[i]}}">{{city[i]}}</option>
+           {%endfor%}
+            </select><br><br>
+
+
+           <label>Model:   </label>
+            <select name="name">
+                <option value="LinearRegression">LinearRegression</option>
+                <option value="SVR">SVM</option>
+                <option value="KNN">KNN</option>
+
+                <option value="DecisionTree">Decision Tree</option>
+            </select>
+            <br><br>
+
+        <button class="button"><h4>submit</h4></button>
+        </form>
+        <p class="pre">prediction:{{ prediction }}₹</p>
+
+
+
+    </div>
+
+  </body>
+</html>
